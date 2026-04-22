@@ -520,7 +520,7 @@ input[type="password"] {
   }
 
   .menuproduct-taken {
-    gap: .7rem;
+    gap: .5rem;
   }
   .menuproduct-taken a {
     font-size: 14px;
@@ -631,11 +631,11 @@ input[type="password"] {
   }
 
   .hero-content-mask h1 {  
-    font-size: 1.2rem;   
+    font-size: 1.1rem;   
   }
   
   .hero-content-mask p {  
-    font-size: 1.2rem;   
+    font-size: 1.1rem;   
   }  
 }
 
