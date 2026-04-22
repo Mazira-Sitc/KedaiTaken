@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO -->
+    <title>Kedai TaKen - Kuliner Khas Pasundan Autentik di Bandung</title>
+    <meta name="description" content="Kedai TaKen menyajikan kuliner khas Pasundan terbaik: Tape Ketan (TaKen), Kentang Bumbu Kedelai (KeKeBuKe), dan minuman segar tradisional.">
+    <meta name="keywords" content="Kedai TaKen, Kuliner Pasundan, Tape Ketan Bandung, Kentang Bumbu Kedelai, Makanan Tradisional Jawa Barat">
+    <meta name="author" content="Kedai TaKen">
+
+    <!-- Open Ghap -->
+    <meta property="og:title" content="Kedai TaKen - Kuliner Khas Pasundan">
+    <meta property="og:description" content="Nikmati sensasi rasa autentik Tape Ketan dan Kentang Bumbu Kedelai khas Pasundan.">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kedaitaken.com/"> <!-- website kedaitaken-->
+
+    <!-- icon favicon-->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    
+    <!-- font dan icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />    
+
+    <!-- Schema SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Kedai TaKen",
+      "image": "img/logo.png",
+      "priceRange": "$",
+      "servesCuisine": "Sundanese",
+      "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Cijaura Hilir Neglasari V",
+      "addressLocality": "Bandung",
+      "postalCode": "40287",
+      "addressCountry": "ID"
+      }
+    }
+    </script>
+  </head>
+
+  <body x-data="{ 
+    activeTab: 'hero', 
+    switchTab(tab, elementId) {
+        this.activeTab = tab;
+        if(elementId) {
+            setTimeout(() => {
+                document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+        } else {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+      }
+    }" class="antialiased">
+
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar-wrapper" id="navbarWrapper">
+        <div class="identity-taken">
+          <div class="logo-name">
+            <img src="img/logo.png" alt="Logo Utama Kedai Taken">
+            <p>Kedai<span>TaKen.</span></p>
+          </div>
+
+          <div class="socialmedia-nav">   
+            <a href="https://www.instagram.com/mazirasitc/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61576648757555" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/home" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.tiktok.com/@mazirasitcoding" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+          </div>     
+
+          <div class="login-taken">
+            <button @click="loginFormTaken" aria-label="Buka Form Login"><i class="fa-solid fa-circle-user"></i></button>                       
+            
+            <div class="loginform-taken" id="loginFormTaken">
+              <div class="overlay"></div>
+
+              <div class="login-card">
+                <div class="login-header">
+                  <h2 id="form-title">Masuk</h2>
+                  <a href="#" class="create-account" id="switch-form">Buat Akun</a>
+                </div>
+
+                <p id="lost-password-msg" style="display: none; font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.5;">
+                  Lupa kata sandi? Masukkan nama pengguna atau alamat email Anda. Anda akan menerima tautan untuk membuat kata sandi baru melalui email.
+                </p>
+
+                <form>
+                  <div class="input-group">
+                    <label>Nama pengguna atau alamat email <span class="required">*</span></label>
+                    <input type="text" required>
+                  </div>
+
+                  <div class="input-group" id="extra-field" style="display: none;">
+                    <label>Nama Lengkap <span class="required">*</span></label>
+                    <input type="text">
+                  </div>
+
+                  <div class="input-group" id="password-group">
+                    <label>Kata Sandi <span class="required">*</span></label>
+                    <div class="password-wrapper">
+                      <input type="password" id="password" required>
+                      <i class="far fa-eye" id="togglePassword"></i>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn-login" id="submit-btn">MASUK</button>
+
+                  <div class="login-footer" id="login-footer">
+                    <label class="remember-me" id="remember-wrap">
+                      <input type="checkbox"> Ingatkan saya
+                    </label>
+                    <a href="#" class="lost-password" id="lost-password-link">Lupa kata sandi?</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menuproduct-searchshopping">
+          <div class="menuproduct-taken">
+            <a href="#heroSection" @click.prevent="activeTab = 'hero'">Beranda</a>
+            <a href="#menuofflineKedaitaken" @click.prevent="activeTab = 'menu'">Menu</a>
+            <a href="#productSellonline" @click.prevent="activeTab = 'produk'">Produk</a>
+          </div>
+
+          <div class="search-shopping">
+            <div class="search-icon">
+              <button aria-label="Cari" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <div class="search-form" id="searchForm">
+                <input type="search" id="search-box" placeholder="cari di sini ..." />        
+              </div>
+            </div>
+            
+            <div class="shoppingcart-sidebar" x-data>
+              <button aria-label="Keranjang" id="shopping-cart-button" @click="openCart()" style="position: relative; cursor: pointer;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-badge"
+                  x-text="$store.cart.items.reduce((sum, item) => sum + item.quantity, 0)"
+                  x-show="$store.cart.items.length > 0">
+                </span>
+              </button>              
+            </div>
+            
+            <button aria-label="Menu" id="hamburgerIcon"><i class="fa-solid fa-bars fa-lg" id="iconToggle"></i></button>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+
+      <!-- Hamburger Icon Content -->
+      <div class="hamburger-menukedai" id="hamburgerMenuKedai">
+        <div class="content-menu" id="contentMenu">          
+          <a href="#heroSection" @click.prevent="activeTab = 'hero'; window.scrollTo(0,0)">Beranda</a>
+          <a href="#kedaiTakenInfo" @click.prevent="activeTab = 'Info Kedai Taken'; window.scrollTo(0,0)">Info KedaiTaken</a>
+          <a href="#menuofflineKedaitaken" @click.prevent="activeTab = 'menu'; window.scrollTo(0,0)">Menu KedaiTaken Offline</a>
+          <a href="#productSellonline" @click.prevent="activeTab = 'produk'; window.scrollTo(0,0)">Produk Online</a>
+          <a href="#promoKedaiTaken" @click.prevent="activeTab = 'promo'; window.scrollTo(0,0)">Promo</a> 
+        </div>         
+      </div>
+      <!-- End Hamburger Icon Content -->
+    </header>
+    
+    <main id="home">
+      
+      <section class="hero-section" id="heroSection" aria-labelledby="hero-section" x-show="activeTab === 'hero'" x-cloak x-transition.opacity.duration.200ms>
+        <!-- HERO -->
+        <header class="first-page">
+          <div class="background-base"></div>
+
+          <div class="hero-content-mask">            
+            <h1 class="brand-fp">Kedai<span class="taken-bn">TaKen. </span> "Kuliner Pasundan"</h1>
+            <p>Sensasi Rasa Kuliner Pasundan</p>
+          </div>
+
+          <div class="foreground-table"></div>
+        </header>
+        <!-- PROFIL -->
+        <article class="profilekedai-page">
+          <div class="short-profile">
+            <figure class="fig-profile">
+              <img src="img/logo.png" alt="Logo Kedai Taken">
+              <figcaption>
+                <h2 class="brand-fp">Kedai<span>TaKen.</span></h2>
+              </figcaption>
+            </figure>
+            <p>
+              Kedai<span>TaKen.</span>&nbsp;adalah destinasi kuliner yang menghadirkan kelezatan autentik khas Jawa Barat dengan sentuhan modern. Kami berkomitmen untuk melestarikan warisan cita rasa Nusantara melalui produk-produk pilihan yang dibuat dari bahan baku berkualitas tinggi dan proses pembuatan yang terjaga kebersihannya. Nama "TaKen" sendiri merujuk pada produk unggulan kami, yaitu "Tape Ketan" dan "Kentang Bumbu Kedelai", yang menjadi simbol kehangatan dan tradisi dalam setiap gigitan.
+            </p>
+            <p>  Kami percaya bahwa rasa yang enak bermula dari ketulusan. Oleh karena itu, setiap produk Kedai TaKen dibuat tanpa bahan pengawet berbahaya, menggunakan resep tradisional yang diwariskan turun-temurun, serta dikemas secara elegan agar kualitasnya tetap terjaga hingga ke tangan Anda.
+            </p>
+            <a href="#kedaiTakenInfo" @click.prevent="activeTab = 'Info Kedai Taken'">Informasi Kedai Taken</a>
+          </div>
+        </article>
+
+        <!-- MENU -->
+        <section class="menu-offline">
+          <header class="menut">
+            <h2>MENU UTAMA KEDAI <span>TAKEN.</span></h2>
+            <p>Kedai<span>TaKen.</span>&nbsp;menawarkan menu special yang menjadi menu utama kami, yaitu Kentang Goreng Bumbu Kedelai (Kentang BuKe), Es Tape Ketan Hijau (Es Tape KeJau) dan Es Tape Ketan Hitam (Es Tape KeHi). Menu ini merupakan ciri khas dari kuliner Pasundan yang kami sajikan dengan cita rasa autentik.</p>
+          </header>
+
+          <div class="menuandalan-kedailp">                  
+            <article class="card-menu">
+              <figure class="fig-menuandalan">                    
+                <img src="img/menu/Kentang Goreng Saos Kedelai1.png" alt="Kentang BuKe 1 dipasangkan dengan Es Jeruk Nipis">
+                <figcaption>
+                  <h3>Kentang BuKe 1</h3>
+                  <p>Es Jeruk Nipis</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="card-menu">
+              <figure class="fig-menuandalan">                    
+                <img src="img/menu/Kentang Goreng Saos Kedelai2.png" alt="Kentang BuKe 2">
+                <figcaption>
+                  <h3>Kentang BuKe 2</h3>
+                  <p>Es Jeruk Lemon</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="card-menu">
+              <figure class="fig-menuandalan">                   
+                <img src="img/menu/es tape ketan hitam.png" alt="Es Tape KeHi">
+                <figcaption>
+                  <h3>Es Tape KeHi</h3>
+                  <p>Mangga Harum Manis</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="card-menu">
+              <figure class="fig-menuandalan">                    
+                <img src="img/menu/Es tape ketan hijau.png" alt="Es Tape KeJau">
+                <figcaption>
+                  <h3>Es Tape KeJau</h3>
+                  <p>Mangga Harum Manis</p>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+
+          <a href="#menuofflineKedaitaken" @click.prevent="activeTab = 'menu'">Daftar Menu Lengkap</a>
+        </section>
+
+        <!-- PRODUK -->
+        <div class="product-online">
+          <header class="prokhas">
+            <h2>PRODUK KEDAI <span>TAKEN.</span></h2>
+            <p>Kedai<span>TaKen.</span>&nbsp;menawarkan beberapa produk unggul yang menjadi produk khas kami, yaitu Tape Ketan Hitam (Tape KeHi), Tape Ketan Hijau (Tape KeJau) dan beberapa varian dari "Keripik Kentang Bumbu Kedelai". Produk khas kami menyajikan cita rasa autentik bumi Parahyangan.</p> 
+          </header>
+          
+          <div class="onlineproduct">
+            <!-- 1 -->                  
+            <article class="card-product"> 
+              <figure class="fig-onlineproduct">                   
+                <img src="img/products/Hijau-0.25kg.png" alt="Tape Kentan Hijau">
+                <figcaption>
+                  <h3>Tape Kentan Hijau</h3>
+                  <p>0.25 kg</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 2 -->
+            <article class="card-product">
+              <figure class="fig-onlineproduct">                    
+                <img src="img/products/Hijau-0.5kg.png" alt="Tape Kentan Hijau">
+                <figcaption>
+                  <h3>Tape Kentan Hijau</h3>
+                  <p>0.5 kg</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 3 -->
+            <article class="card-product">
+              <figure class="fig-onlineproduct">                    
+                <img src="img/products/Hijau-1kg.png" alt="Tape Kentan Hijau">
+                <figcaption>
+                  <h3>Tape Kentan Hijau</h3>
+                  <p>1 kg</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 4 -->
+            <article class="card-product">
+              <figure class="fig-onlineproduct">                    
+                <img src="img/products/Hitam-0.25kg.png" alt="Tape Kentan Hitam">
+                <figcaption>
+                  <h3>Tape Kentan Hitam</h3>
+                  <p>0.25 kg</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 5 -->
+            <article class="card-product"> 
+              <figure class="fig-onlineproduct">                   
+                <img src="img/products/Hitam-0.5kg.png" alt="Tape Kentan Hitam">
+                <figcaption>
+                  <h3>Tape Kentan Hitam</h3>
+                  <p>0.5 kg</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 6 -->
+            <article class="card-product">
+              <figure class="fig-onlineproduct">                    
+                <img src="img/products/Hitam-1kg.png" alt="Tape Kentan Hitam">
+                <figcaption>
+                  <h3>Tape Kentan Hitam</h3>
+                  <p>1 kg</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 7 -->
+            <article class="card-product">
+              <figure class="fig-onlineproduct">                    
+                <img src="img/products/Netral.png" alt="Kentang BuKe Netral">
+                <figcaption>
+                  <h3>Keripik Kentang BuKe</h3>
+                  <p>Tidak Pedas - Netral</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 8 -->
+            <article class="card-product"> 
+              <figure class="fig-onlineproduct">                  
+                <img src="img/products/Lv-1.png" alt="Kentang BuKe Pedas Level 1">
+                <figcaption>
+                  <h3>Keripik Kentang BuKe</h3>
+                  <p>Pedas Level 1</p>
+                </figcaption>
+              </figure> 
+            </article>
+            <!-- 9 -->
+            <article class="card-product">
+              <figure class="fig-onlineproduct">
+                <img src="img/products/Lv-2.png" alt="Kentang BuKe Pedas Level 2">
+                <figcaption> 
+                  <h3>Keripik Kentang BuKe</h3>
+                  <p>Pedas Level 2</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 10 -->
+            <article class="card-product"> 
+              <figure class="fig-onlineproduct">                 
+                <img src="img/products/Lv-3.png" alt="Kentang BuKe Pedas Level 3">
+                <figcaption>
+                  <h3>Keripik Kentang BuKe</h3>
+                  <p>Pedas Level 3</p>
+                </figcaption>
+              </figure>  
+            </article>
+            <!-- 11 -->
+            <article class="card-product"> 
+              <figure class="fig-onlineproduct">                   
+                <img src="img/products/Lv-4.png" alt="Kentang BuKe Pedas Level 4">
+                <figcaption>
+                  <h3>Keripik Kentang BuKe</h3>
+                  <p>Pedas Level 4</p>
+                </figcaption>
+              </figure>
+            </article>
+            <!-- 12 -->
+            <article class="card-product"> 
+              <figure class="fig-onlineproduct">                   
+                <img src="img/products/Lv-5.png" alt="Kentang BuKe Pedas Level 5">
+                <figcaption>
+                  <h3>Keripik Kentang BuKe</h3>
+                  <p>Pedas Level 5</p>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+
+          <a href="#productSellonline" @click.prevent="activeTab = 'produk'">Daftar Produk Lengkap</a>
+        </div>
+      </section> 
+      
+      <section class="menuoffline-kedaitaken" id="menuofflineKedaiTaken" aria-labelledby="meal-title" x-show="activeTab === 'menu'" x-cloak x-transition.opacity.duration.200ms>
+        <!-- Heading Utama -->
+        <header class="dine-in-service">
+          <h2>MENU UTAMA KEDAI<span>TAKEN.</span></h2>
+          <p>Kedai<span>TaKen.</span> menawarkan menu special yang menjadi hidangan khas kami, yaitu Kentang Goreng Bumbu Kedelai (Kentang BuKe), Es Tape Ketan Hijau (Es Tape KeJau), Es Tape Ketan Hitam (Es Tape KeHi) dan makanan tradisional lainnya. Menu ini merupakan ciri khas dari kuliner Pasundan yang kami sajikan dengan cita rasa autentik.</p>
+        </header>
+
+        <!-- Makanan -->
+        <section class="mealoffline-kedaimenu"> 
+          <h3>Menu Makanan Khas Kedai<span>Taken.</span></h3>          
+          <ul class="menu-list">
+            <!-- 1 -->
+            <li>
+              <article class="card-menuoffline">
+                <figure class="fig-meal">                   
+                  <img src="img/menu/Kentang Goreng Saos Kedelai1.png" alt="Kentang BuKe 1 - Kentang Goreng Bumbu Kedelai">
+                  <figcaption>
+                    <h4>Kentang BuKe 1</h4>
+                    <p>Es Jeruk Nipis</p>
+                  </figcaption>                
+                </figure>
+              </article>
+            </li>
+            <!-- 2 -->
+            <li>
+              <article class="card-menuoffline">
+                <figure class="fig-meal">                    
+                  <img src="img/menu/Kentang Goreng Saos Kedelai2.png" alt="Kentang BuKe 2">
+                  <figcaption>
+                    <h4>Kentang BuKe 2</h4>
+                    <p>Es Jeruk Lemon</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 3 -->
+            <li>
+              <article class="card-menuoffline"> 
+                <figure class="fig-meal">                   
+                  <img src="img/menu/es tape ketan hitam.png" alt="Es Tape KeHi">
+                  <figcaption>
+                    <h4>Es Tape KeHi</h4>
+                    <p>Mangga Harum Manis</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 4 -->
+            <li>              
+              <article class="card-menuoffline">   
+                <figure class="fig-meal">                 
+                  <img src="img/menu/Es tape ketan hijau.png" alt="Es Tape KeJau">
+                  <figcaption>
+                    <h4>Es Tape KeJau</h4>
+                    <p>Mangga Harum Manis</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 5 -->
+            <li>
+              <article class="card-menuoffline">
+                <figure class="fig-meal">                    
+                  <img src="img/menu/Baladog.png" alt="Baladog">                  
+                  <figcaption>
+                    <h4>Bala-bala Endog</h4>
+                    <p>Telor Ayam Puyuh</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 6 -->
+            <li>
+              <article class="card-menuoffline"> 
+                <figure class="fig-meal">                   
+                  <img src="img/menu/Gehu Gembrot.png" alt="Tahu Gembrot">
+                  <figcaption>
+                    <h4>Tahu Gembrot</h4>
+                    <p>Telor Ayam Puyuh</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 7 -->
+            <li>
+              <article class="card-menuoffline">
+                <figure class="fig-meal">                  
+                  <img src="img/menu/Pisang Keju.png" alt="Pisang Keju">                 
+                  <figcaption>
+                    <h4>Pisang Goreng Keju</h4>
+                    <p>Pisang Tanduk</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 8 -->
+            <li>
+              <article class="card-menuoffline">
+                <figure class="fig-meal">                    
+                  <img src="img/menu/Pisang kukus.png" alt="Pisang Kukus">
+                
+                  <figcaption>
+                    <h4>Pisang Kukus</h4>
+                    <p>Pisang Tanduk</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 9 -->
+            <li>
+              <article class="card-menuoffline">  
+                <figure class="fig-meal">                 
+                  <img src="img/menu/cireng.png" alt="Cireng">
+                
+                  <figcaption>
+                    <h4>Cireng Sambal Hitam</h4>
+                    <p>Bahan Istimewa</p>
+                  </figcaption>
+                </figure> 
+              </article>
+            </li>
+            <!-- 10 -->
+            <li>
+              <article class="card-menuoffline"> 
+                <figure class="fig-meal">                   
+                  <img src="img/menu/Tape Putih Daun.png" alt="Tape Putih Daun">
+                  <figcaption>
+                    <h4>Tape Putih Daun</h4>
+                    <p>Bungkus Daun Pisang</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 11 -->
+            <li>
+              <article class="card-menuoffline"> 
+                <figure class="fig-meal">                   
+                  <img src="img/menu/Tape Hitam Daun.png" alt="Tape Hitam Daun">                
+                  <figcaption>
+                    <h4>Tape Hitam Daun</h4>
+                    <p>Bungkus Daun Pisang</p>
+                  </figcaption>
+                </figure>
+              </article> 
+            </li>
+            <!-- 12 -->
+            <li>  
+              <article class="card-menuoffline">
+                <figure class="fig-meal">                    
+                  <img src="img/menu/Tape Hijau Daun.png" alt="Tape Hijau Daun">
+                  <figcaption>
+                    <h4>Tape Hijau Daun</h4>
+                    <p>Bungkus Daun Pisang</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+          </ul>          
+        </section>
+
+        <!-- Minuman -->
+        <section class="drinkoffline-kedaimenu"> 
+          <h3>Menu Minuman Khas Kedai<span>Taken.</span></h3> 
+          <ul class="menu-list-drink">
+            <!-- 1 -->
+            <li>
+              <article class="card-drinkoffline">
+                <figure class="fig-drink">
+                  <img src="img/menu/Es Blue & Fruit.png" alt="Es Blue & Fruit">
+                  <figcaption>
+                    <h4>Es Blue & Fruit</h4>
+                    <p>Sirup Biru</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 2 -->
+            <li>
+              <article class="card-drinkoffline"> 
+                <figure class="fig-drink">
+                  <img src="img/menu/Es Buah.png" alt="Es Buah">
+                  <figcaption class="fig-drink">
+                    <h4>Es Buah</h4>
+                    <p>Buah-buahan Istiewa</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 3 -->  
+            <li>
+              <article class="card-drinkoffline"> 
+                <figure class="fig-drink">                   
+                  <img src="img/menu/Es Teh Lemon.png" alt="Es Teh Lemon">
+                  <figcaption class="fig-drink">
+                    <h4>Es Teh Lemon</h4>
+                    <p>Lemon Istimewa</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 4 -->
+            <li>
+              <article class="card-drinkoffline"> 
+                <figure class="fig-drink">               
+                  <img src="img/menu/Es Teh Nipis.png" alt="Es Teh Nipis">
+                  <figcaption class="fig-drink">
+                    <h4>Es Teh Nipis</h4>
+                    <p>Jeruk Nipis Istimewa</p>
+                  </figcaption>
+                </figure>    
+              </article>
+            </li>
+            <!-- 5 -->
+            <li>
+              <article class="card-drinkoffline"> 
+                <figure class="fig-drink">                   
+                  <img src="img/menu/Kopingat.png" alt="Kopi Panas Taken">
+                  <figcaption>
+                    <h4>Kopi Panas Taken</h4>
+                    <p>Kopi Olahan Kedai Taken</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 6 -->
+            <li>
+              <article class="card-drinkoffline">
+                <figure class="fig-drink">                   
+                  <img src="img/menu/Soda Gembira.png" alt="Soda Gembira">
+                  <figcaption>
+                    <h4>Soda Gembira</h4>
+                    <p>Khas Kedai Taken</p>
+                  </figcaption>
+                </figure> 
+              </article>
+            </li>
+            <!-- 7 -->
+            <li>
+              <article class="card-drinkoffline"> 
+                <figure class="fig-drink">                  
+                  <img src="img/menu/Es Cingcau Degan.png" alt="Es Cingcau Degan">
+                  <figcaption>
+                    <h4>Es Cingcau Degan</h4>
+                    <p>Degan Hijau</p>
+                  </figcaption>
+                </figure> 
+              </article>
+            </li>
+            <!-- 8 -->
+            <li>
+              <article class="card-drinkoffline"> 
+                <figure class="fig-drink">
+                  <img src="img/menu/Es Leci.png" alt="Es Leci">                
+                  <figcaption>
+                    <h4>Es Merah</h4>
+                    <span>Sirup Merah dan Jeruk</span>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 9 -->
+            <li>
+              <article class="card-drinkoffline">
+                <figure class="fig-drink">                    
+                  <img src="img/menu/Es Santan Aren.png" alt="Es Santan Aren">
+                  <figcaption>
+                    <h4>Es Santan Aren</h4>
+                    <p>Santan Kelapa Istimewa</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+            <!-- 10 -->
+            <li>
+              <article class="card-drinkoffline">
+                <figure class="fig-drink">                    
+                  <img src="img/menu/Es Degan Jeruk Nipis.png" alt="Es Degan Jeruk Nipis">
+                  <figcaption>
+                    <h4>Es Degan Jeruk</h4>
+                    <p>Degan Hijau</p>
+                  </figcaption>
+                </figure>
+              </article>
+            </li>
+          </ul>          
+        </section>
+      </section> 
+      
+      <section class="product-sellonline" id="productSellonline" aria-labelledby="product-title" x-show="activeTab === 'produk'" x-cloak x-transition.opacity.duration.200ms>
+        <div class="producttaken-online"> 
+          <header class="product-to-go">
+            <h2>PRODUK KEDAI<span>TAKEN.</span></h2>
+            <p>Kedai<span>TaKen.</span> menawarkan beberapa produk unggul yang menjadi produk khas kami, yaitu "Tape Ketan Hitam" (Tape KeHi), "Tape Ketan Hijau" (Tape KeJau) dan beberapa varian dari "Keripik Kentang Bumbu Kedelai" (KeKeBuKe). Produk khas kami menyajikan cita rasa autentik bumi Parahyangan.</p> 
+          </header>
+
+          <section class="onlinesell-product"> 
+            <!-- 1 Tape Hijau -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="Tape KeJau (0.25kg)" 
+              data-price="25000" 
+              data-img="img/products/Hijau-0.25kg.png" 
+              data-desc="Tape Ketan Hijau (Tape KeJau) adalah hidangan istimewa yang dibuat dari bahan-bahan alami pilihan. Tekstur lembut, aroma harum, dan manis legit khas yang dihasilkan dari proses fermentasi tradisional yang higienis menjadikannya pilihan pecinta kuliner tradisional.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Hijau-0.25kg.png" alt="Tape KeJau (0.25kg)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'tape-kejau1',
+                      title: 'Tape KeJau (0.25kg)', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">Tape KeJau (0.25kg)</h3>
+                <meta itemprop="description" content="Tape Ketan Hijau (Tape KeJau) premium dibuat dari bahan alami dengan rasa legit yang khas.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 2 Tape Hijau -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="Tape KeJau (0.5kg)" 
+              data-price="50000" 
+              data-img="img/products/Hijau-0.5kg.png" 
+              data-desc="Tape Ketan Hijau (Tape KeJau) adalah hidangan istimewa yang dibuat dari bahan-bahan alami pilihan. Tekstur lembut, aroma harum, dan manis legit khas yang dihasilkan dari proses fermentasi tradisional yang higienis menjadikannya pilihan pecinta kuliner tradisional.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Hijau-0.5kg.png" alt="Tape KeJau (0.5kg)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'tape-kejau2',
+                      title: 'Tape KeJau (0.5kg)', 
+                      price: 50000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">Tape KeJau (0.5kg)</h3>
+                <meta itemprop="description" content="Tape Ketan Hijau (Tape KeJau) premium dibuat dari bahan alami dengan rasa legit yang khas.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span>
+                    <span itemprop="price" content="50000">50.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 3 Tape Hijau -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="Tape KeJau (1kg)" 
+              data-price="100000" 
+              data-img="img/products/Hijau-1kg.png" 
+              data-desc="Tape Ketan Hijau (Tape KeJau) adalah hidangan istimewa yang dibuat dari bahan-bahan alami pilihan. Tekstur lembut, aroma harum, dan manis legit khas yang dihasilkan dari proses fermentasi tradisional yang higienis menjadikannya pilihan pecinta kuliner tradisional.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Hijau-1kg.png" alt="Tape KeJau (1kg)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'tape-kejau3',
+                      title: 'Tape KeJau (1kg)', 
+                      price: 100000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">Tape KeJau (1kg)</h3>
+                <meta itemprop="description" content="Tape Ketan Hijau (Tape KeJau) premium dibuat dari bahan alami dengan rasa legit yang khas.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="100000">100.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 1 Tape Hitam-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="Tape KeHi (0.25kg)" 
+              data-price="30000" 
+              data-img="img/products/Hitam-0.25kg.png" 
+              data-desc="Tape Ketan Hitam (Tape KeHi) adalah hidangan istimewa yang dibuat dari bahan-bahan alami pilihan. Tekstur lembut, aroma harum, dan manis legit khas yang dihasilkan dari proses fermentasi tradisional yang higienis menjadikannya pilihan pecinta kuliner tradisional.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Hitam-0.25kg.png" alt="Tape KeHi (0.25kg)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'tape-kehi1',
+                      title: 'Tape KeHi (0.25kg)', 
+                      price: 30000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">Tape KeHi (0.25kg)</h3>
+                <meta itemprop="description" content="Tape Ketan Hitam (Tape KeHi) premium dibuat dari bahan alami dengan rasa legit yang khas.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="30000">30.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 2 Tape Hitam -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="Tape KeHi (0.5kg)" 
+              data-price="60000" 
+              data-img="img/products/Hitam-0.5kg.png" 
+              data-desc="Tape Ketan Hitam (Tape KeHi) adalah hidangan istimewa yang dibuat dari bahan-bahan alami pilihan. Tekstur lembut, aroma harum, dan manis legit khas yang dihasilkan dari proses fermentasi tradisional yang higienis menjadikannya pilihan pecinta kuliner tradisional.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Hitam-0.5kg.png" alt="Tape KeHi (0.5kg)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'tape-kehi2',
+                      title: 'Tape KeHi (0.5kg)', 
+                      price: 60000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">Tape KeHi (0.5kg)</h3>
+                <meta itemprop="description" content="Tape Ketan Hitam (Tape KeHi) premium dibuat dari bahan alami dengan rasa legit yang khas.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="60000">60.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 3 Tape Hitam -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="Tape KeHi (1kg)" 
+              data-price="110000" 
+              data-img="img/products/Hitam-1kg.png" 
+              data-desc="Tape Ketan Hitam (Tape KeHi) adalah hidangan istimewa yang dibuat dari bahan-bahan alami pilihan. Tekstur lembut, aroma harum, dan manis legit khas yang dihasilkan dari proses fermentasi tradisional yang higienis menjadikannya pilihan pecinta kuliner tradisional.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Hitam-1kg.png" alt="Tape KeHi (1kg)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({
+                      id: 'tape-kehi3', 
+                      title: 'Tape KeHi (1kg)', 
+                      price: 110000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">Tape KeHi (1kg)</h3>
+                <meta itemprop="description" content="Tape Ketan Hitam (Tape KeHi) premium dibuat dari bahan alami dengan rasa legit yang khas.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="110000">110.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 1 KeKeBuKe Netral -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="KeKeBuKe Netral" 
+              data-price="20000" 
+              data-img="img/products/Netral.png" 
+              data-desc="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik. Teksturnya yang renyah berpadu sempurna dengan bumbu rempah rahasia, menjadikannya camilan ideal bagi siapa saja yang menginginkan sensasi kelezatan tradisional dalam kemasan modern.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Netral.png" alt="KeKeBuKe Netral" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'kekebuke-netral',
+                      title: 'KeKeBuKe Netral', 
+                      price: 20000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">KeKeBuKe Netral</h3>
+                <meta itemprop="description" content="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="20000">20.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 2 KeKeBuKe Lv.1 -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="KeKeBuKe Lv.1" 
+              data-price="25000" 
+              data-img="img/products/Lv-1.png" 
+              data-desc="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik. Teksturnya yang renyah berpadu sempurna dengan bumbu rempah rahasia, menjadikannya camilan ideal bagi siapa saja yang menginginkan sensasi kelezatan tradisional dalam kemasan modern.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Lv-1.png" alt="KeKeBuKe Lv.1" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'kekebuke-lv1',
+                      title: 'KeKeBuKe Lv.1', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">KeKeBuKe Lv.1</h3>
+                <meta itemprop="description" content="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span>
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 3 KeKeBuKe Lv.2 -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="KeKeBuKe Lv.2" 
+              data-price="25000" 
+              data-img="img/products/Lv-2.png" 
+              data-desc="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik. Teksturnya yang renyah berpadu sempurna dengan bumbu rempah rahasia, menjadikannya camilan ideal bagi siapa saja yang menginginkan sensasi kelezatan tradisional dalam kemasan modern.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Lv-2.png" alt="KeKeBuKe Lv.2" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'kekebuke-lv2',
+                      title: 'KeKeBuKe Lv.2', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">KeKeBuKe Lv.2</h3>
+                <meta itemprop="description" content="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span>
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 4 KeKeBuKe Lv.3 -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="KeKeBuKe Lv.3" 
+              data-price="25000" 
+              data-img="img/products/Lv-3.png" 
+              data-desc="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik. Teksturnya yang renyah berpadu sempurna dengan bumbu rempah rahasia, menjadikannya camilan ideal bagi siapa saja yang menginginkan sensasi kelezatan tradisional dalam kemasan modern.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Lv-3.png" alt="KeKeBuKe Lv.3" itemprop="image">
+                <div class="action-icons">
+                    <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'kekebuke-lv3',
+                      title: 'KeKeBuKe Lv.3', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">KeKeBuKe Lv.3</h3>
+                <meta itemprop="description" content="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 5 KeKeBuKe Lv.4 -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="KeKeBuKe Lv.4" 
+              data-price="25000" 
+              data-img="img/products/Lv-4.png" 
+              data-desc="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik. Teksturnya yang renyah berpadu sempurna dengan bumbu rempah rahasia, menjadikannya camilan ideal bagi siapa saja yang menginginkan sensasi kelezatan tradisional dalam kemasan modern.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Lv-4.png" alt="KeKeBuKe Lv.4" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({
+                      id: 'kekebuke-lv4', 
+                      title: 'KeKeBuKe Lv.4', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">KeKeBuKe Lv.4</h3>
+                <meta itemprop="description" content="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 6 KeKeBuKe Lv.5 -->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="KeKeBuKe Lv.5" 
+              data-price="25000" 
+              data-img="img/products/Lv-5.png" 
+              data-desc="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik. Teksturnya yang renyah berpadu sempurna dengan bumbu rempah rahasia, menjadikannya camilan ideal bagi siapa saja yang menginginkan sensasi kelezatan tradisional dalam kemasan modern.">
+
+              <figure class="product-image">                  
+                <img src="img/products/Lv-5.png" alt="KeKeBuKe Lv.5" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'kekebuke-lv5',
+                      title: 'KeKeBuKe Lv.5', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">KeKeBuKe Lv.5</h3>
+                <meta itemprop="description" content="Keripik Kentang Bumbu Kedelai ini terbuat dari perpaduan kentang pilihan dan kedelai premium, menghasilkan cita rasa gurih yang autentik.">
+                
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 1 Tape Hijau Bungkus Daun 25 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeJaDa (25 pcs)" 
+              data-price="25000" 
+              data-img="img/products/TaKeJau-25.png" 
+              data-desc="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeJau-25.png" alt="TaKeJaDa (25 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takejada1',
+                      title: 'TaKeJaDa (25 pcs)', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeJaDa (25 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 2 Tape Hijau Bungkus Daun 50 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeJaDa (50 pcs)" 
+              data-price="50000" 
+              data-img="img/products/TaKeJau-50.png" 
+              data-desc="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeJau-50.png" alt="TaKeJaDa (50 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takejada2',
+                      title: 'TaKeJaDa (50 pcs)', 
+                      price: 50000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeJaDa (50 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="50000">50.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 3 Tape Hijau Bungkus Daun 75 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeJaDa (75 pcs)" 
+              data-price="75000" 
+              data-img="img/products/TaKeJau-75.png" 
+              data-desc="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeJau-75.png" alt="TaKeJaDa (75 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takejada3',
+                      title: 'TaKeJaDa (75 pcs)', 
+                      price: 75000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeJaDa (75 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="50000">50.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 4 Tape Hijau Bungkus Daun 100 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeJaDa4" 
+              data-price="100000" 
+              data-img="img/products/TaKeJau-100.png" 
+              data-desc="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeJau-100.png" alt="TaKeJaDa (100 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takejada-(100 pcs)',
+                      title: 'TaKeJaDa (100 pcs)', 
+                      price: 100000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeJaDa (100 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hijau Daun (TaKeJaDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="100000">100.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 1 Tape Putih Bungkus Daun 25 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKePuDa (25 pcs)" 
+              data-price="25000" 
+              data-img="img/products/TaKePu-25.png" 
+              data-desc="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKePu-25.png" alt="TaKePuDa (25 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takepuda1',
+                      title: 'TaKePuDa (25 pcs)', 
+                      price: 25000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKePuDa (25 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="25000">25.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 2 Tape Putih Bungkus Daun 50 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKePuDa (50 pcs)" 
+              data-price="50000" 
+              data-img="img/products/TaKePu-50.png" 
+              data-desc="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKePu-50.png" alt="TaKePuDa (50 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takepuda2',
+                      title: 'TaKePuDa (50 pcs)', 
+                      price: 50000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKePuDa (50 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="50000">50.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 3 Tape Putih Bungkus Daun 75 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKePuDa (75 pcs)" 
+              data-price="75000" 
+              data-img="img/products/TaKePu-75.png" 
+              data-desc="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKePu-75.png" alt="TaKePuDa (75 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({
+                      id: 'takepuda3', 
+                      title: 'TaKePuDa (75 pcs)', 
+                      price: 75000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKePuDa (75 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="75000">75.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 4 Tape Putih Bungkus Daun 100 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKePuDa (100 pcs)" 
+              data-price="100000" 
+              data-img="img/products/TaKePu-100.png" 
+              data-desc="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKePu-100.png" alt="TaKePuDa (100 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takepuda4',
+                      title: 'TaKePuDa (100 pcs)', 
+                      price: 100000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKePuDa (100 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Putih Daun (TaKePuDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="100000">100.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 1 Tape Hitam Bungkus Daun 25 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeHiDa (25 pcs)" 
+              data-price="30000" 
+              data-img="img/products/TaKeHi-25.png" 
+              data-desc="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeHi-25.png" alt="TaKeHiDa (25 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({ 
+                      id: 'takehida1',
+                      title: 'TaKeHiDa (25 pcs)', 
+                      price: 30000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeHiDa (25 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="30000">30.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 2 Tape Hitam Bungkus Daun 50 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeHiDa (50 pcs)" 
+              data-price="60000" 
+              data-img="img/products/TaKeHi-50.png" 
+              data-desc="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeHi-50.png" alt="TaKeHiDa (50 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({
+                      id: 'takehida2', 
+                      title: 'TaKeHiDa (50 pcs)', 
+                      price: 60000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeHiDa (50 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="60000">60.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 3 Tape Hitam Bungkus Daun 75 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeHiDa (75 pcs)" 
+              data-price="85000" 
+              data-img="img/products/TaKeHi-75.png" 
+              data-desc="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeHi-75.png" alt="TaKeHiDa (75 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({
+                      id: 'takehida3', 
+                      title: 'TaKeHiDa (75 pcs)', 
+                      price: 85000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeHiDa (75 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="85000">85.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 4 Tape Hitam Bungkus Daun 100 pcs-->
+            <article class="card-sellproduct"
+              itemscope itemtype="http://schema.org/Product"
+              data-title="TaKeHiDa (100 pcs)" 
+              data-price="115000" 
+              data-img="img/products/TaKeHi-100.png" 
+              data-desc="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, aroma harum, tekstur lembut, dan lumer di mulut. Setiap suapan menghadirkan kesegaran alami yang memanjakan lidah penikmatnya.">
+
+              <figure class="product-image">                  
+                <img src="img/products/TaKeHi-100.png" alt="TaKeHiDa (100 pcs)" itemprop="image">
+                <div class="action-icons">
+                  <button type="button" title="Tambah ke Keranjang" 
+                    @click="$store.cart.add({
+                      id: 'takehida4', 
+                      title: 'TaKeHiDa (100 pcs)', 
+                      price: 115000 
+                    }); showCustomAlert('Produk ditambahkan!');">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                  <button type="button" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                </div>
+              </figure> 
+
+              <div class="product-info">
+                <h3 itemprop="name">TaKeHiDa (100 pcs)</h3>
+                <meta itemprop="description" content="Tape Ketan Hitam Daun (TaKeHiDa) dibuat dari beras ketan premium dengan ekstrak daun suji yang menghasilkan rasa manis, lembut dan lumer di mulut.">
+
+                <div class="rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                  (<span itemprop="ratingValue">4.5</span>)
+                  <meta itemprop="reviewCount" content="10">
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <p class="price">
+                    <span aria-hidden="true">Rp</span> 
+                    <span itemprop="price" content="115000">115.000</span>
+                    <meta itemprop="priceCurrency" content="IDR">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+                  </p>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="kedai-taken-info" id="kedaiTakenInfo" aria-labelledby="kedai-taken-info" x-show="activeTab === 'Info Kedai Taken'" x-cloak x-transition.oppacity.duration.200ms> 
+        <article class="info-kedaiTaken">
+          <header class="profile-kt">
+            <h2>SELAYANG KEDAI<span>TAKEN.</span></h2>
+            <figure class="profile-kedaiTaken">
+              <img src="img/logo.png" alt="Logo Kedai Taken">
+              <figcaption>
+                <h3>Kedai <span>Taken.</span></h3>
+              </figcaption>
+            </figure>
+          </header>
+
+          <section class="basic-information">
+            <p class="introduction">Kedai TaKen adalah destinasi kuliner yang menghadirkan kelezatan autentik khas Jawa Barat dengan sentuhan modern. Kami berkomitmen untuk melestarikan warisan cita rasa Nusantara melalui produk-produk pilihan yang dibuat dari bahan baku berkualitas tinggi dan proses pembuatan yang terjaga kebersihannya. Nama "TaKen" sendiri merujuk pada produk unggulan kami, yaitu "Tape Ketan" dan "Kentang Bumbu Kedelai", yang menjadi simbol kehangatan dan tradisi dalam setiap gigitan.</p>
+            <p class="introduction"> Kami percaya bahwa rasa yang enak bermula dari ketulusan. Oleh karena itu, setiap produk Kedai TaKen dibuat tanpa bahan pengawet berbahaya, menggunakan resep tradisional yang diwariskan turun-temurun, serta dikemas secara elegan agar kualitasnya tetap terjaga hingga ke tangan Anda.</p>
+
+            <h4>Produk Unggulan</h4>
+            <p class="des-h4">Kedai TaKen menawarkan beberapa produk khas, di antaranya:</p>
+
+            <ul class="main-product">              
+              <li>
+                <strong class="tebal">Tape Ketan Hitam (TaKeHi)</strong> 
+                <p>Olahan tape ketan hitam dengan rasa manis legit dan tekstur lembut.</p>
+              </li>
+
+              <li>
+                <strong class="tebal">Tape Ketan Hijau (TaKeJau)</strong>
+                <p>Tape ketan dengan warna alami dan aroma khas yang menggugah selera.</p>
+              </li>
+
+              <li>
+                <strong class="tebal">Keripik Kentang Bumbu Kedelai (KeKeBuKe)</strong>
+                <p>Camilan renyah dengan perpaduan rasa gurih dan khas kedelai, tersedia dalam berbagai varian rasa.</p>
+              </li>
+            </ul>
+
+            <p class="closing">Kedai TaKen hadir sebagai solusi bagi pecinta kuliner yang ingin menikmati kelezatan makanan tradisional dengan sentuhan kekinian. Kami percaya bahwa makanan bukan hanya sekadar kebutuhan, tetapi juga pengalaman dan warisan budaya yang harus dijaga.</p>
+          </section>
+
+          <section class="location">
+            <h5>Lokasi Kedai<span>TaKen</span></h5>
+            <div class="map-frame">
+              <iframe 
+                src="https://www.google.com/maps?q=Jl.%20Cijaura%20Hilir%20Neglasari%20V%20Buahbatu%20Bandung&output=embed"
+                width="100%" 
+                height="250" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+            </div>
+            <address>
+              Jl. Cijaura Hilir Neglasari V 
+              Desa Buahbatu, Kecamatan Buahbatu
+              Kota Bandung, Jawa Barat 40287
+            </address>
+          </section>
+        </article>
+      </section>
+
+      <section class="promo-kedaitaken" id="promoKedaiTaken" aria-labelledby="promo-info" x-show="activeTab === 'promo'" x-cloak x-transition.opacity.duration.200ms> 
+        <article class="promo-info">
+          <header class="head-promo">
+            <h2>PROMO BESAR KEDAI <span>TAKEN.</span></h2>
+            <h3>"Spesial sampai dengan 31 Desember 2026"</h3>
+          </header>
+
+          <p>Dapatkan penawaran menarik untuk setiap pembelian produk kami. Nikmati diskon spesial, paket hemat, dan promo eksklusif yang hanya tersedia untuk pelanggan setia Kedai TaKen. Jangan lewatkan kesempatan untuk menikmati cita rasa kuliner Pasundan dengan harga yang lebih terjangkau!</p>
+          
+          <picture>
+            <img src="img/background/promo.png" alt="Promo Kedai TaKen">
+          </picture>
+        </article>
+      </section> 
+    </main>
+
+    <aside class="sponsor">
+      <p>Sponsored by:</p>
+      <figure class="sponsor-kedaitaken">
+        <img src="img/logo.png" alt="Logo Taken">
+        <figcaption>Kedai<span>TaKen.</span></figcaption>
+      </figure>
+
+      <figure class="sponsor-kedaitaken">
+        <img src="img/logo mazira png.png" alt="Logo Mazira">
+        <figcaption>Mazira<span>SITC</span></figcaption>
+      </figure>   
+
+      <figure class="sponsor-kedaitaken">
+        <img src="img/logo dapun.png" alt="Logo Dapun">
+        <figcaption>SiAnIt</span></figcaption>
+      </figure>   
+    </aside>
+
+    <footer class="footer-taken">
+      <div class="footer-box"> 
+        <div class="address-taken"> 
+          <img src="img/logo.png" alt="Logo Kedai">         
+          <p class="footer-brand">KEDAI <span>TAKEN.</span></p>
+          <p class="slogan">Sensasi Rasa Kuliner Pasundan</p>          
+          <p class="address">Jl. Cijaura Hilir Neglasari V Desa Buahbatu Kecamatan Buahbatu Kota Bandung Jawa Barat 40287</p>
+        </div>
+
+        <div class="socialmedia-footer">   
+          <a href="https://www.instagram.com/mazirasitc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Kedai Taken">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://web.facebook.com/profile.php?id=61576648757555" target="_blank" rel="noopener noreferrer" aria-label="Facebook Kedai Taken">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://x.com/home" target="_blank" rel="noopener noreferrer" aria-label="Twitter X Kedai Taken">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.tiktok.com/@mazirasitcoding" target="_blank" rel="noopener noreferrer" aria-label="TikTok Kedai Taken">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div> 
+
+        <nav class="footer-link">
+          <p>TAUTAN UTAMA</p>
+          <ul>
+            <li><a href="#kedaiTakenInfo" @click.prevent="activeTab = 'Info Kedai Taken'; window.scrollTo(0,0)">Kedai Taken</a></li>
+            <li><a href="#heroSection" @click.prevent="activeTab = 'hero'; window.scrollTo(0,0)">Beranda</a></li>
+            <li><a href="#menuofflineKedaitaken" @click.prevent="activeTab = 'menu'; window.scrollTo(0,0)">Menu</a></li>
+            <li><a href="#productSellonline" @click.prevent="activeTab = 'produk'; window.scrollTo(0,0)">Produk</a></li>
+            <li><a href="#promoKedaiTaken" @click.prevent="activeTab = 'promo'; window.scrollTo(0,0)">Promo</a></li>
+          </ul>
+        </nav>      
+      </div>
+
+      <div class="copyright">
+        <small>
+          &copy; 2026. <strong>&copy; MAZIRA-STICoding</strong>. All Rights Reserved.
+        </small>
+      </div>
+    </footer>
+   
+    <div class="modal-product" id="modalProduct" >
+      <div class="modal-content-product">
+        <span class="close-button">&times;</span>
+
+        <div class="modal-body">
+          <div class="modal-img">
+            <img id="photoProduct" src="" alt="">
+          </div>
+
+          <div class="modal-info">
+            <h2 id="modalTitle"></h2>
+
+            <p class="modal-price" id="modalPrice"></p>
+
+            <p class="product-description" id="productDescription"></p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+       
+    <div id="customAlert" class="custom-alert">
+      <p id="alert-message"></p>
+      <button onclick="closeCustomAlert()">OK</button>
+    </div>   
+
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Keranjang Saya</h3>
+        <button id="close-cart" class="close-cart">&times;</button>
+      </div>
+                    
+      <div id="cart-items-container" class="cart-items-list">
+        <template x-for="(item, index) in $store.cart.items" :key="item.id">
+          <div class="cart-item">
+            <div class="item-info">
+              <h4 x-text="item.title"></h4>
+
+              <div class="quantity-controls">
+                <button @click.stop="$store.cart.remove(item.id)" class="qty-btn">-</button>
+                <span x-text="item.quantity" class="qty-num"></span>
+                <button @click.stop="$store.cart.add({id: item.id, title: item.title, price: item.price})" class="qty-btn">+</button>
+              </div>
+
+              <p>Total: <span x-text="'Rp ' + (item.price * item.quantity).toLocaleString()"></span></p>
+
+              <button @click.stop="$store.cart.removeItem(item.id)" class="delete-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="cart-footer">
+        <div class="customer-info">
+          <input type="text" id="cust-name" placeholder="Nama Lengkap" required>
+          <input type="email" id="cust-email" placeholder="Email (Opsional)">
+          <input type="tel" id="cust-phone" placeholder="Nomor WhatsApp (Contoh: 0812...)" required>
+        </div>
+
+        <div class="total-price">
+          <span>Total:</span>
+          <span x-text="'Rp ' + $store.cart.totalPrice.toLocaleString()">Rp 0</span>
+        </div>
+                      
+        <button class="checkout-btn" onclick="sendToAdmin()">Bayar (WhatsApp)</button>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <a href="#promoKedaiTaken" class="promo-utama" title="Lihat Promo Terbaru"  @click.prevent="activeTab = 'promo'; window.scrollTo(0,0)">
+      <figure>
+        <img src="img/promo.png" alt="Promo Spesial Kuliner Pasundan Kedai Taken">
+        <figcaption>Cek Promo</figcaption>
+      </figure>
+    </a>
+    
+    <a href="https://wa.me/628212299271" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi kami melalui WhatsApp" title="Chat WhatsApp">
+      <div class="wa-icon">
+        <i class="fab fa-whatsapp"></i> 
+      </div>
+    </a>
+
+    <button onclick="topFunction()" class="btn-up" id="btnUp" title="Kembali ke atas">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </body>
+</html>
