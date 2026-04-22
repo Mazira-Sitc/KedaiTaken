@@ -541,104 +541,104 @@ input[type="password"] {
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* FULL HERO */
 .first-page {
   position: relative;
   width: 100%;
-  height: 100vh;  
+  min-height: 100vh; /* ganti dari height */
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* BACKGROUND */
 .background-base {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: url('../img/background/cover-back.png');
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
   z-index: 1;
 }
 
+/* CONTENT */
 .hero-content-mask {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  position: absolute;
-  top: 30%;
+  position: relative;
   z-index: 2;
-  font-size: 3rem;
   text-align: center;
-  will-change: transform, opacity;
+  padding: 0 5%;
+  max-width: 900px;
 }
 
-.hero-content-mask h1 {  
-  text-align: center;
-  font-size: 3rem;
+/* TEXT RESPONSIVE (AUTO SCALE) */
+.hero-content-mask h1 {
+  font-size: clamp(1.3rem, 5vw, 3rem);
   color: var(--white);
 }
 
-.brand-fp .taken-bn  {
+.brand-fp .taken-bn {
   color: var(--fbasic);
   font-style: italic;
 }
 
-.hero-content-mask p  {
+.hero-content-mask p {
+  font-size: clamp(1.1rem, 4vw, 2.2rem);
   color: var(--primary);
-  font-size: 2.5rem;
   font-style: italic;
 }
 
+/* FOREGROUND */
 .foreground-table {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100vh;
-  background-image:url("../img/background/cover-back.svg"); 
+  height: 100%;
+  background-image: url("../img/background/cover-back.svg");
   background-size: cover;
-  background-position: center bottom ;
-  z-index: 3; 
-  pointer-events: none;  
+  background-position: center;
+  z-index: 3;
+  pointer-events: none;
 }
 
-@media screen and (max-width: 768px) {
-  .hero-content-mask h1 {  
-    font-size: 2.5rem;   
+/* ===================== */
+/* TABLET */
+/* ===================== */
+@media (max-width: 768px) {
+  .hero-content-mask {
+    padding: 0 8%;
   }
-  
-  .hero-content-mask p {  
-    font-size: 2.3rem;   
-  }  
-}
 
-@media screen and (max-width: 360px) {
   .background-base,
   .foreground-table {
-    background-position: 40% center; 
+    background-position: center;
+  }
+}
+
+/* ===================== */
+/* HP */
+/* ===================== */
+@media (max-width: 480px) {
+  .first-page {
+    min-height: 90vh; /* biar tidak kepotong navbar */
   }
 
   .hero-content-mask {
-    margin: 0; 
-    padding: 0 5%;
-    margin-top: 5rem;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 10%;
   }
 
-  .hero-content-mask h1 {  
-    font-size: 1.1rem;   
+  .background-base,
+  .foreground-table {
+    background-position: 60% center;
   }
-  
-  .hero-content-mask p {  
-    font-size: 1.1rem;   
-  }  
 }
 
+/* ------------- */
 .profilekedai {
   position: relative;
   width: 100%;
