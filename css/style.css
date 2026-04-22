@@ -514,9 +514,16 @@ input[type="password"] {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 360px) {
   .logo-name > p {
     display: none;
+  }
+
+  .menuproduct-taken {
+    gap: .7rem;
+  }
+  .menuproduct-taken a {
+    font-size: 14px;
   }
   
   .search-shopping {
@@ -606,7 +613,7 @@ input[type="password"] {
   }  
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 360px) {
   .background-base,
   .foreground-table {
     background-position: 40% center; 
@@ -624,11 +631,11 @@ input[type="password"] {
   }
 
   .hero-content-mask h1 {  
-    font-size: 1.6rem;   
+    font-size: 1.2rem;   
   }
   
   .hero-content-mask p {  
-    font-size: 1.5rem;   
+    font-size: 1.2rem;   
   }  
 }
 
@@ -815,7 +822,7 @@ input[type="password"] {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 360px) {
   .menut h2 {
     font-size: 1.8rem;
   }
