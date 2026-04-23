@@ -335,7 +335,6 @@ input[type="password"] {
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 450;
-  /* z-index: 2005; */
 }
 
 .menuproduct-taken a:hover {
@@ -514,14 +513,15 @@ input[type="password"] {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 480px) {
   .logo-name > p {
     display: none;
   }
 
   .menuproduct-taken {
-    gap: .5rem;
+    gap: .7rem;
   }
+
   .menuproduct-taken a {
     font-size: 14px;
   }
@@ -578,7 +578,7 @@ input[type="password"] {
 
 /* TEXT RESPONSIVE (AUTO SCALE) */
 .hero-content-mask h1 {
-  font-size: clamp(1.3rem, 5vw, 3rem);
+  font-size: clamp(1.3rem, 4vw, 3rem);
   color: var(--white);
 }
 
@@ -611,7 +611,7 @@ input[type="password"] {
 /* ===================== */
 @media (max-width: 768px) {
   .hero-content-mask {
-    padding: 0 8%;
+    padding: 0 9%;
   }
 
   .background-base,
@@ -625,20 +625,21 @@ input[type="password"] {
 /* ===================== */
 @media (max-width: 480px) {
   .first-page {
-    min-height: 90vh; /* biar tidak kepotong navbar */
+    min-height: 95vh; /* biar tidak kepotong navbar */
   }
 
   .hero-content-mask {
-    padding: 0 10%;
+    padding: 0 9%;
   }
 
   .background-base,
   .foreground-table {
-    background-position: 60% center;
+    background-position: 47% center;
   }
 }
+/* ===================== */
 
-/* ------------- */
+
 .profilekedai {
   position: relative;
   width: 100%;
@@ -706,6 +707,8 @@ input[type="password"] {
   text-decoration: underline;
   color: var(--white);
 }
+/* ===================== */
+
 
 .menu-offline {
   position: relative;
@@ -732,7 +735,7 @@ input[type="password"] {
 .menut h2 {
   display: flex;
   width: 100%;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 600;
   color: var(--white);
   justify-content: center;
@@ -822,15 +825,13 @@ input[type="password"] {
   }
 }
 
-@media screen and (max-width: 360px) {
-  .menut h2 {
-    font-size: 1.8rem;
-  }
-
+@media screen and (max-width: 480px) {
   .menut p {
     text-align: justify;
   }
 }
+/* ===================== */
+
 
 .product-online {
   position: relative;
@@ -854,8 +855,8 @@ input[type="password"] {
 .prokhas h2 {
   display: flex;
   width: 100%;
-  font-size: 2.5rem;
-  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
   color: var(--fblue);
   justify-content: center;
   align-items: center;
