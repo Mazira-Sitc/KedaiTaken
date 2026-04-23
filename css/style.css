@@ -578,7 +578,7 @@ input[type="password"] {
 
 /* TEXT RESPONSIVE (AUTO SCALE) */
 .hero-content-mask h1 {
-  font-size: clamp(1.3rem, 4vw, 3rem);
+  font-size: clamp(1.2rem, 4vw, 3rem);
   color: var(--white);
 }
 
@@ -871,7 +871,7 @@ input[type="password"] {
   width: 100%;
   color: var(--fblue);
   font-size: 1.2rem;
-  margin: 2rem 5rem 2rem 5rem;
+  margin: 1rem 0 2rem 0;
   text-align: center;
   line-height: 1.6;
 }
@@ -951,11 +951,7 @@ input[type="password"] {
   }
 }
 
-@media screen and (max-width: 500px) {
-  .prokhas h2 {
-    font-size: 1.8rem;
-  }
-
+@media screen and (max-width: 480px) {
   .prokhas p {
     text-align: justify;
   }
@@ -997,7 +993,7 @@ input[type="password"] {
 }
 
 .dine-in-service p {
-  font-size: 1.2rem;  
+  font-size: clamp(1.2rem, 4vw, 2.5rem);  
   text-align: justify;
 }
 
@@ -1017,14 +1013,13 @@ input[type="password"] {
 
 .mealoffline-kedaimenu h3 {
   display: flex;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   color: var(--fungu);
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-.mealoffline-kedaimenu h3 span {
-  font-size: 1.4rem;
+.mealoffline-kedaimenu h3 span {  
   color: var(--fbasic);
   font-style: italic;
 }
@@ -1083,14 +1078,13 @@ input[type="password"] {
 
 .drinkoffline-kedaimenu h3 {
   display: flex;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   color: var(--fungu);
   justify-content: center;
   margin-bottom: 1rem;
 }
 
 .drinkoffline-kedaimenu h3 span {
-  font-size: 1.4rem;
   color: var(--fbasic);
   font-style: italic;
 }
@@ -1143,10 +1137,6 @@ input[type="password"] {
 }
 
 @media screen and (max-width: 480px) {
-  .dine-in-service h2 {
-    font-size: 1.7rem;
-  }
-
   .dine-in-service p {
     text-align: justify;
   }
