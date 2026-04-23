@@ -400,7 +400,7 @@ input[type="password"] {
   position: absolute;
   top: 120%;
   right: 0;  
-  width: 20rem;
+  width: clamp(17rem, 4vw, 20rem);
   height: 35px;
   display: flex;
   align-items: center;
