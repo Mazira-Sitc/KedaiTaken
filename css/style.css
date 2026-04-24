@@ -578,7 +578,7 @@ input[type="password"] {
 
 /* TEXT RESPONSIVE (AUTO SCALE) */
 .hero-content-mask h1 {
-  font-size: clamp(1.2rem, 4vw, 3rem);
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   color: var(--white);
 }
 
@@ -588,7 +588,7 @@ input[type="password"] {
 }
 
 .hero-content-mask p {
-  font-size: clamp(1.1rem, 4vw, 2.2rem);
+  font-size: clamp(1.1rem, 4vw, 2rem);
   color: var(--primary);
   font-style: italic;
 }
@@ -993,7 +993,7 @@ input[type="password"] {
 }
 
 .dine-in-service p {
-  font-size: clamp(1.2rem, 4vw, 2.5rem);  
+  font-size: 1.2rem;  
   text-align: justify;
 }
 
@@ -1013,7 +1013,7 @@ input[type="password"] {
 
 .mealoffline-kedaimenu h3 {
   display: flex;
-  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  font-size: clamp(1.2rem, 4vw, 2rem);
   color: var(--fungu);
   justify-content: center;
   margin-bottom: 1rem;
@@ -1078,7 +1078,7 @@ input[type="password"] {
 
 .drinkoffline-kedaimenu h3 {
   display: flex;
-  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  font-size: clamp(1.2rem, 4vw, 2rem);
   color: var(--fungu);
   justify-content: center;
   margin-bottom: 1rem;
@@ -1175,7 +1175,7 @@ input[type="password"] {
 }
 
 .product-to-go h2 {
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   margin-bottom: 2rem;
 }
 
@@ -1317,7 +1317,7 @@ input[type="password"] {
 }
 
 .profile-kt h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   text-align: center;  
 }
 
@@ -1477,7 +1477,7 @@ address {
 }
 
 .head-promo h2 {
-  font-size: clamp(1.5, 4vw, 2rem);
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   text-align: center;
   color: var(--fblue);
 }
@@ -1488,7 +1488,7 @@ address {
 }
 
 .head-promo h3 {
-  font-size: clamp(1.1, 4vw, 2rem);
+  font-size: clamp(1.1rem, 4vw, 1.8rem);
   color: var(--fungu);
 } 
 
