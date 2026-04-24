@@ -1317,7 +1317,8 @@ input[type="password"] {
 }
 
 .profile-kt h2 {
-  font-size: 1.8rem;  
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  text-align: center;  
 }
 
 .profile-kt h2 span {
@@ -1476,7 +1477,7 @@ address {
 }
 
 .head-promo h2 {
-  font-size: 2rem;
+  font-size: clamp(1.2, 4vw, 2rem);
   color: var(--fblue);
 }
 
@@ -1486,7 +1487,7 @@ address {
 }
 
 .head-promo h3 {
-  font-size: 1.7rem;
+  font-size: clamp(1.1, 4vw, 2rem);
   color: var(--fungu);
 } 
 
@@ -1511,7 +1512,6 @@ address {
 
   .head-promo h3 {
     text-align: justify;
-    font-size: 1.5rem;
   }
 
   .promo-info p {
@@ -1521,17 +1521,14 @@ address {
 
 @media screen and (max-width: 480px) {  
   .head-promo h2 {
-    font-size: 1.7rem;
     text-align: justify;
   }
 
   .head-promo h3 {
     text-align: justify;
-    font-size: 1.1rem;
   }
 
   .promo-info p {
-    font-size: 1rem;
     text-align: justify;
   }
 }
@@ -2183,7 +2180,7 @@ body.no-scroll {
 
 
 /* ========================================== */
-/* ============= PROMO SECTION ============== */
+/* ============= PROMO ICON ============== */
 /* ========================================== */
 .promo-utama {
   position: fixed;
@@ -2240,7 +2237,7 @@ body.no-scroll {
   }
 }
 /* ========================================== */
-/* =========== END PROMO SECTION ============ */
+/* ============= END PROMO ICON ============= */
 /* ========================================== */
 
 /* ======================================= */
